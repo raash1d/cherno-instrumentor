@@ -22,6 +22,7 @@ Cpp11BracedListStyle: "true"
 DerivePointerAlignment: "false"
 ExperimentalAutoDetectBinPacking: "false"
 FixNamespaceComments: "true"
+IndentPPDirectives: "BeforeHash"
 IndentWidth: "4"
 Language: Cpp
 NamespaceIndentation: All
