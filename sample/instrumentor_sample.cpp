@@ -2,26 +2,33 @@
 #include <numeric>
 #include <vector>
 
-#include "InstrumentationTimer.h"
-#include "Instrumentor.h"
+#include "InstrumentorConfig.h"
+
+double vector_accumulate(size_t n, int i) {
+    PROFILE_FUNCTION();
+
+    std::vector<int> v(n, i);
+    return std::accumulate(v.begin(), v.end(), 0u);
+}
 
 double vector_accumulate(size_t n) {
-    InstrumentationTimer timer("vector_accumulate");
+    PROFILE_FUNCTION();
 
     std::vector<int> v(n, 42);
     return std::accumulate(v.begin(), v.end(), 0u);
 }
 
 void run_benchmarks() {
-    InstrumentationTimer timer("run_benchmarks");
+    PROFILE_FUNCTION();
 
+    std::cout << "Running benchmarks...\n";
     vector_accumulate(100);
-    vector_accumulate(1000);
+    vector_accumulate(100, 33);
 }
 
 int main() {
-    Instrumentor::get().beginSession("Profile");
+    PROFILE_BEGIN_SESSION("InstrumentorSampleProfile", "InstrumentorSampleProfile.json");
     run_benchmarks();
-    Instrumentor::get().endSession();
+    PROFILE_END_SESSION();
     return 1;
 }
