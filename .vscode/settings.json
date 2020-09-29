@@ -1,0 +1,15 @@
+{
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "locale": "cpp",
+    "optional": "cpp",
+    "sstream": "cpp",
+    "streambuf": "cpp",
+    "__string": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp",
+    "thread": "cpp",
+    "__config": "cpp"
+  }
+}
