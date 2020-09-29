@@ -33,7 +33,7 @@ struct InstrumentationSession {
 
 class Instrumentor {
 public:
-    void beginSession(const std::string& name, const std::string& filepath);
+    void beginSession(const std::string& name, const std::string& filepath = "results.json");
     void endSession();
 
     void writeProfile(const ProfileResult& result);

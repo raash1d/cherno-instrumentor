@@ -8,6 +8,6 @@ target_include_directories(instrumentor_sample
         PRIVATE
         ${CMAKE_SOURCE_DIR}/src)
 
-target_link_libraries(
+target_link_libraries(instrumentor_sample
         instrumentor
 )

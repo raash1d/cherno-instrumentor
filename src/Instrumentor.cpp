@@ -1,7 +1,6 @@
 #include "Instrumentor.h"
 
-void Instrumentor::beginSession(const std::string& name,
-                                const std::string& filepath = "results.json") {
+void Instrumentor::beginSession(const std::string& name, const std::string& filepath) {
     outputStream_.open(filepath);
     writeHeader();
     currentSession_ = new InstrumentationSession{name};
